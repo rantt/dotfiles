@@ -1,19 +1,36 @@
-" Vundle Stuff
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set nocompatible
+filetype off
+
+" Setting up Vundle - the vim plugin bundler - from http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
+    let iCanHazVundle=1
+    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+    if !filereadable(vundle_readme)
+        echo "Installing Vundle.."
+        echo ""
+        silent !mkdir -p ~/.vim/bundle
+        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+        let iCanHazVundle=0
+    endif
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+    Bundle 'gmarik/vundle'
+    "Add your bundles here
+    Bundle 'tomtom/tcomment_vim'
+    Bundle 'tpope/vim-bundler'
+    Bundle 'tpope/vim-rails'
+    Bundle 'vim-ruby/vim-ruby'
+    Bundle 'wincent/Command-T'
+    Bundle 'edkolev/tmuxline.vim'
+
+    if iCanHazVundle == 0
+        echo "Installing Bundles, please ignore key map error messages"
+        echo ""
+        :PluginInstall
+    endif
+" Setting up Vundle - the vim plugin bundler end
 
 
 
-" Let Vundle manage Vundle (required)!
-Bundle 'gmarik/vundle'
-
-" My Bundles
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-rails'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'wincent/Command-T'
-Bundle 'edkolev/tmuxline.vim'
 
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on " Enable filetype-specific indenting and plugins
