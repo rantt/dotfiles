@@ -1,0 +1,11 @@
+[user]
+	name = <Full Name> 
+	email = <email> 
+[color]
+	ui = true
+[push]
+	default = simple
+[alias]
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ll = log --graph --date=short

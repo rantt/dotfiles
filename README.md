@@ -5,8 +5,13 @@ My tmux and vim config files
 
 ## Install Powerline
 
-git clone https://github.com/Lokaltog/powerline ~/.powerline
+  git clone https://github.com/Lokaltog/powerline ~/.powerline
 
+## Install Vundle
+
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+Launch vim and run `:PluginInstall`
 
 # Installing ZSH on Ubuntu
 

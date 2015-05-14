@@ -1,41 +1,40 @@
 set nocompatible
 filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Setting up Vundle - the vim plugin bundler - from http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
-    let iCanHazVundle=1
-    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-    if !filereadable(vundle_readme)
-        echo "Installing Vundle.."
-        echo ""
-        silent !mkdir -p ~/.vim/bundle
-        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-        let iCanHazVundle=0
-    endif
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
-    Bundle 'gmarik/vundle'
-    "Add your bundles here
-    Bundle 'tomtom/tcomment_vim'
-    Bundle 'tpope/vim-bundler'
-    Bundle 'tpope/vim-rails'
-    Bundle 'vim-ruby/vim-ruby'
-    Bundle 'wincent/Command-T'
-    Bundle 'edkolev/tmuxline.vim'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-rails'
+" Plugin 'git://github.com/ap/vim-css-color.git'
+Plugin 'The-NERD-tree'
+Plugin 'Solarized' " http://ethanschoonover.com/solarized/vim-colors-solarized
+Plugin 'git://github.com/rstacruz/sparkup.git'
+Plugin 'EasyMotion'
+Plugin 'git://github.com/chrisbra/Colorizer.git'
+Plugin 'snipMate'
+" Plugin 'git://github.com/marijnh/tern_for_vim.git' "for use with jsctags
+" npm install -g git://github.com/ramitos/jsctags.git
 
-    if iCanHazVundle == 0
-        echo "Installing Bundles, please ignore key map error messages"
-        echo ""
-        :PluginInstall
-    endif
-" Setting up Vundle - the vim plugin bundler end
+let g:colorizer_auto_filetype='css,html,js'
 
 
 
+" All of your Plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on
 
-syntax on                 " Enable syntax highlighting
-filetype plugin indent on " Enable filetype-specific indenting and plugins
+
+"  Solarized Settings
+syntax enable
+" set background=light
+set background=dark
+colorscheme solarized
 
 augroup myfiletypes
+
 " Clear old autocmds in group
 autocmd!
 " autoindent with two spaces, always expand tabs
@@ -46,11 +45,6 @@ augroup END
 "  Set Working Dir to Current Dir
 set autochdir
 
-
-" execute pathogen#infect()
-" filetype off
-" syntax on
-" filetype plugin indent on
 set number
 set tabstop=2
 set shiftwidth=2
@@ -68,4 +62,21 @@ map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>v :rightbelow vnew <C-R>=expand("%:p:h") . '/'<CR>
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
-python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages/")
+
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+" EasyMotion press <Leader><Leader>w
+" python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages/")
+
+" " Brief help
+" " :PluginList       - lists configured plugins
+" " :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginUpdate
+" " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" " :PluginClean      - confirms removal of unused plugins; append `!` to
+" auto-approve removal
+" "
+" " see :h vundle for more details or wiki for FAQ
+" " Put your non-Plugin stuff after this line
