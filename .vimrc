@@ -15,6 +15,7 @@ Plugin 'git://github.com/rstacruz/sparkup.git'
 Plugin 'EasyMotion'
 Plugin 'git://github.com/chrisbra/Colorizer.git'
 Plugin 'snipMate'
+Plugin 'jade.vim'
 " Plugin 'git://github.com/marijnh/tern_for_vim.git' "for use with jsctags
 " npm install -g git://github.com/ramitos/jsctags.git
 
