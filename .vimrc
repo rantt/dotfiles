@@ -18,12 +18,15 @@ Plugin 'vimwiki/vimwiki'
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 
+Plugin 'godlygeek/tabular'
+
 " Snippets are separated from the engine. Add this if you want them:
 " Plugin 'honza/vim-snippets'
 
 call vundle#end()
   
 let g:vimwiki_list = [{'path': '~/notes/docs', 'syntax': 'markdown', 'ext': '.md'}]
+" let g:vimwiki_list = [{'path': '~/union/collective_agreement_v2/docs', 'syntax': 'markdown', 'ext': '.md'}]
 
 let g:vimwiki_table_mappings = 0
 
@@ -67,10 +70,13 @@ nmap k gk
 """" Vim Appearance
 
 " put colorscheme files in ~/.vim/colors/
-colorscheme solarized      " good colorschemes: murphy, slate, molokai, badwolf, solarized
-let g:solarized_termcolors = 16
+
+set background=dark
+let g:solarized_termcolors = 16 
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
+" colorscheme solarized      " good colorschemes: murphy, slate, molokai, badwolf, solarized
+colorscheme solarized      " good colorschemes: murphy, slate, molokai, badwolf, solarized
 
 " use filetype-based syntax highlighting, ftplugins, and indentation
 syntax enable
@@ -104,5 +110,5 @@ map <Leader>v :rightbelow vnew <C-R>=expand("%:p:h") . '/'<CR>
 """" Miscellaneous settings that might be worth enabling
 
 "set cursorline         " highlight current line
-set background=light    " configure Vim to use brighter colors
+" set background=light    " configure Vim to use brighter colors
 "set autoread           " autoreload the file in Vim if it has been changed outside of Vim
