@@ -1,0 +1,51 @@
+snippet doc 
+
+## <a name="$1"></a>$1
+
+$2
+
+*input:* $3
+
+*return:* $4
+
+pseudo code:
+
+\`\`\`
+$5
+\`\`\`
+
+code:
+
+\`\`\`ruby
+$5
+\`\`\`
+
+$0
+
+endsnippet
+
+snippet valcode 
+
+<a name="$1"></a>$1
+
+\`\`\`yaml
+$2
+\`\`\`
+$0
+endsnippet
+
+snippet anc
+<a name="$1"></a>$1
+endsnippet
+
+snippet [#
+[$1](#$1)
+endsnippet
+
+snippet img
+*$1*
+
+![IMG:$1](/img/2019/oct/ssroles/$2)
+
+$0
+endsnippet

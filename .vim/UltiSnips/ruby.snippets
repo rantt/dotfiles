@@ -1,0 +1,60 @@
+snippet hrec 
+$1 = record['$1']
+$0
+endsnippet
+
+snippet h
+#!/usr/bin/env ruby
+
+# Name: `!p snip.rv = snip.basename`.rb
+# Author: David Canam <david.canam@stu.ca>
+# Date: `!v strftime("%Y-%m-%d")`
+# Release Status : $1
+# Description: $2
+
+$0
+endsnippet
+
+snippet app
+$LOAD_PATH.push File.join(File.dirname(__FILE__), "./lib")
+APP_ROOT = File.expand_path(File.dirname(__FILE__),"./")
+$0
+endsnippet
+
+snippet datatel
+require 'datatel_connect'
+require 'datatel_uniquery'
+
+def fetch_datatel(query)
+  d = Datatel.new
+  d.send_query(query)
+  download_list = query.each_line.map { |line| line[/_HOLD_ ([0-9a-zA-Z._]*)/,1] }.compact!
+  print Time.now.strftime("%Y-%m-%d %H:%M:%S")+" Retrieving File(s) #{download_list.join(' ')}\n"
+  d.get_files(download_list)
+end
+
+$0
+endsnippet
+
+snippet CSV.foreach
+CSV.foreach("$1", encoding: 'WINDOWS-1252', col_sep: ',', quote_char: '"', headers: true) do |rec|
+	$0
+end
+endsnippet
+
+snippet JSON.parse
+JSON.parse(File.open("$1").read).each do |hash|
+	$0
+end
+endsnippet
+
+snippet xmltohash
+require 'active_support/core_ext/hash'
+
+def xmltohash (filename)
+	xml_data = File.read("#{APP_ROOT}/input/#{filename}").encode!("UTF-8","Windows-1252", invalid: :replace, undef: :replace)
+
+	return Hash.from_xml(xml_data)
+end
+
+endsnippet
