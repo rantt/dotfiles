@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/dave/code/transcript/test'
+let g:netrw_dirhist_6='/Users/dave/code/ad_accounts/input'
+let g:netrw_dirhist_5='/Users/dave/code/scripts/Datatel/class_list'
+let g:netrw_dirhist_4='/Users/dave/code/scripts/Datatel'
+let g:netrw_dirhist_3='/Users/dave/code/scripts/Datatel/class_list'
+let g:netrw_dirhist_2='/Users/dave/code/scripts/Datatel/class_list/output'
+let g:netrw_dirhist_1='/Users/dave/code/scripts/Datatel/class_list'
+let g:netrw_dirhist_0='/Users/dave/notes'
+let g:netrw_dirhist_9='/Users/dave/games/docker-bedrockserver'
+let g:netrw_dirhist_8='/Users/dave/code/ad_accounts/lib'
