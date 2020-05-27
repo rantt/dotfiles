@@ -1,0 +1,14 @@
+
+#Theme=yellow_red_theme
+
+SavePlaylist		= yes
+
+# ASCIILines		= no
+
+ReadTags = yes
+MusicDir = /Users/dave/Music
+XTerms = xterm-256color
+Theme = rhowaldt
+MOCDir = ~/.moc
+UseRCC = no
+
