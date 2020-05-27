@@ -15,6 +15,11 @@ snippet h
 $0
 endsnippet
 
+snippet r
+require '$1'
+$0
+endsnippet
+
 snippet app
 $LOAD_PATH.push File.join(File.dirname(__FILE__), "./lib")
 APP_ROOT = File.expand_path(File.dirname(__FILE__),"./")
